@@ -19,6 +19,6 @@
     "require": {
         "php": ">=7.0",
         "yiisoft/yii2": "2.*",
-        "yiiman/yii-lib-metalib": "~0.0.2"
+        "yiiman/yii-lib-metalib": "~0.0.3"
     }
 }
