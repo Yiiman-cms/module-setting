@@ -1,0 +1,24 @@
+{
+    "name": "yiiman/yii-module-setting",
+    "description": "Dynamic setting module for Yii2",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "YiiMan\\Setting\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "YiiMan",
+            "email": "info@yiiman.ir",
+            "homepage": "https://yiiman.ir"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "yiisoft/yii2": "2.*",
+        "yiiman/yii-lib-metalib": "~0.0.2"
+    }
+}
