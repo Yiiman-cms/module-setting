@@ -52,9 +52,7 @@ use YiiMan\YiiLibMeta\lib\MetaLib;
 class Options extends Component
 {
     public $object;
-    public $fileName = 'settings.json';
-    public $metalib = null;
-    public $uploadManager = null;
+
 
 
 
