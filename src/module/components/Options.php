@@ -7,6 +7,7 @@ namespace YiiMan\Setting\module\components;
 use Yii;
 use yii\base\Component;
 use YiiMan\LibUploadManager\lib\UploadManager;
+use YiiMan\Setting\lib\Object1;
 use YiiMan\Setting\module\models\DynamicModel;
 use YiiMan\YiiLibMeta\lib\MetaLib;
 
@@ -48,7 +49,7 @@ use YiiMan\YiiLibMeta\lib\MetaLib;
  * @property string  $telegramToken
  * @property string  $telegramBotUsername
  */
-class Options extends Component
+class Options extends Object1
 {
     public $object;
     public $fileName = 'settings.json';
