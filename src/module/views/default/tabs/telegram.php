@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Created by YiiMan TM.
+	 * Created by YiiMan.
 	 * Programmer: gholamreza beheshtian
 	 * Mobile:09353466620
 	 * Company Phone:05138846411
@@ -9,8 +9,8 @@
 	 * Time: ۰۵:۱۳ بعدازظهر
 	 */
 	
-	use YiiMan\Setting\module\widgets\ImageField;
-	use system\widgets\toggle\ToggleWidget; ?>
+	use YiiMan\Setting\widgets\ImageField;
+	use YiiMan\Setting\widgets\ToggleWidget; ?>
 <div class="tab-pane" id="telegram">
 	<div style="margin: -10px -12.5px -10px -10px;padding: 10px;">
 		<div class="card" style="margin-top: 20px">

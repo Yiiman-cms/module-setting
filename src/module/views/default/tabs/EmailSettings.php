@@ -5,7 +5,7 @@
  * @var                       \yii\base\DynamicModel  $model
  */
 
-use YiiMan\widgetToggle\ToggleWidget;
+use YiiMan\Setting\widgets\ToggleWidget;
 
 ?>
 <div class="tab-pane" id="EmailSettings">
