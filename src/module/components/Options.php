@@ -49,16 +49,18 @@ use YiiMan\YiiLibMeta\lib\MetaLib;
  * @property string  $telegramToken
  * @property string  $telegramBotUsername
  */
-class Options extends Component
+class Options
 {
     public $object;
     public $fileName = 'settings.json';
     public $metalib = null;
     public $uploadManager = null;
 
-    public function __construct($config = [])
+    public function __construct($init=true)
     {
-
+        if ($init) {
+            $this->init();
+        }
     }
 
     public function init()
