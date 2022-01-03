@@ -19,7 +19,7 @@
                     <div class="form-group">
                         <?php
                         $id = 'UploadDir';
-                        $defaultUPDir = realpath(YII_APP_BASE_PATH . '/upload');
+                        $defaultUPDir = realpath($_ENV['uploadDir'] );
 
                         ?>
                         <label for="<?= $id ?>" class="col-sm-2 control-label"><?= Yii::t(
@@ -34,7 +34,7 @@
                         <span>
                                <?= Yii::t('settings', 'آدرس پیش فرض سیستم:') ?>
                             <br>
-                                <?= realpath(YII_APP_BASE_PATH . '/upload') ?>
+                                <?= realpath($_ENV['uploadDir']) ?>
                             <p>به کوچک و بزرگ بودن حروف دقت کنید، چنانچه در هاست از کد استفاده میکنید، به کوچک و بزرگی نام درایو نیز دقت نمایید</p>
                         </span>
                     </div>

@@ -1,24 +1,14 @@
 <?php
-	
-	use kartik\tabs\TabsX;
-	use system\lib\BaseConfigs;
-	use system\lib\Triggers;
-	use system\widgets\mapInput\GMapInputWidget;
-	use system\widgets\toggle\ToggleWidget;
-	use yii\base\DynamicModel;
+
+	use YiiMan\Setting\module\trigger\Triggers;
+	use YiiMan\widgetMapInput\GMapInputWidget;
+	use YiiMan\widgetToggle\ToggleWidget;
 	use yii\base\Event;
-	use yii\helpers\Html;
-	use yii\grid\GridView;
 	use YiiMan\Setting\module\Module;
-	use YiiMan\Setting\module\models\Setting;
-	use yii\helpers\ArrayHelper;
 	use yii\widgets\ActiveForm;
-	use yii\widgets\Pjax;
-	
 
 	/**
 	 * @var yii\web\View                                $this
-	 * @var YiiMan\Setting\module\models\SettingSearch $searchModel
 	 * @var yii\data\ActiveDataProvider                 $dataProvider
 	 * @var \YiiMan\Setting\module\components\Options  $options
 	 */

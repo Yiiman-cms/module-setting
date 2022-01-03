@@ -14,6 +14,7 @@ namespace YiiMan\Setting\module\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
+use YiiMan\LibUploadManager\lib\UploadManager;
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
@@ -22,9 +23,10 @@ class DynamicModel extends \yii\base\DynamicModel
 
     public $formName = '';
     static $tableName = '';
-
+    public $uploadManager;
     public function loadSettings($upload = true)
     {
+        $this->uploadManager = new UploadManager();
         $options = Yii::$app->Options;
         $options->init();
 
@@ -35,7 +37,7 @@ class DynamicModel extends \yii\base\DynamicModel
                     if (!empty($_FILES['DynamicModel']['tmp_name'][$attr])) {
                         $this->defineAttribute($attr);
                         if ($upload) {
-                            $fileName = Yii::$app->UploadManager->save($this, $attr);
+                            $fileName = $this->uploadManager->save($this, $attr);
                             $options->init();
                             $object = $options->object;
                             $object->DynamicModel->{$attr} = ['type' => 'file', 'file' => $fileName];

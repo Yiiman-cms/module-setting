@@ -1,13 +1,14 @@
 <?php
 	
-	namespace YiiMan\Setting\module\widgets;
+	namespace YiiMan\Setting\widgets;
 	
 	use Yii;
 	use yii\base\Component;
 	use yii\helpers\Html;
-	
-	
-	class FieldRender extends Component {
+    use YiiMan\Setting\module\components\Options;
+
+
+    class FieldRender extends Component {
 		const TYPE_TEXT_AREA = 'TEXT_AREA';
 		const TYPE_TEXT_INPUT = 'TEXT';
 		const TYPE_RADIO_BUTTON_IMAGE = 'RADIO_IMAGE';
@@ -17,7 +18,7 @@
 			$html = '';
 			$html.=self::js();
 			$html.=self::css();
-			$options = Yii::$app->Options;
+			$options = new Options();
 			
 			foreach ( $items as $item ) {
 				if ( empty( $item['type'] ) ) {

@@ -9,10 +9,10 @@
 	 * Time: ۱۱:۱۶ قبل‌ازظهر
 	 */
 	
-	namespace YiiMan\Setting\module\widgets;
+	namespace YiiMan\Setting\widgets;
 	
 	
-	use system\widgets\toggle\ToggleWidget;
+	use YiiMan\Setting\widgets\ToggleWidget;
 	
 	class SwitchField {
 		public static function run( $form , $model , $attribute , array $options ) {

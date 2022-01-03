@@ -1,8 +1,8 @@
 <?php
 	
-	namespace YiiMan\Setting\module\widgets;
+	namespace YiiMan\Setting\widgets;
 	
-	use system\modules\filemanager\assets\FileSelectorAsset;
+	use YiiMan\Setting\assets\FileSelectorAsset;
 	use yii\base\Widget;
 	use yii\widgets\InputWidget;
 	
@@ -41,7 +41,7 @@ CSS;
 
 			$this->view->registerCss($css);
 			echo $this->render(
-				'@system/modules/setting/widgets/views/widgetView.php' ,
+				'@YiiMan/src/widgets/views/mediaViewWidget.php' ,
 				[
 					'model'     => $this->model ,
 					'attribute' => $this->attribute ,

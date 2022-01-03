@@ -19,6 +19,11 @@
     "require": {
         "php": ">=7.0",
         "yiisoft/yii2": "2.*",
-        "yiiman/yii-lib-metalib": "~0.0.3"
+        "yiiman/yii-lib-metalib": "~0.0.3",
+        "vlucas/phpdotenv": "5.4.x-dev",
+        "yiiman/yii-lib-upload-manager": "0.0.1",
+        "ext-json": "*",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "kartik-v/yii2-widget-select2": "2.1.7"
     }
 }

@@ -9,12 +9,10 @@
 	 * Time: ۱۹:۳۵ بعدازظهر
 	 */
 	
-	namespace YiiMan\Setting\module\widgets;
+	namespace YiiMan\Setting\widgets;
 	
 	
 	use Exception;
-	use system\modules\filemanager\widget\FileSelectorWidget;
-	use YiiMan\Setting\module\widgets\MediaViewWidget;
 	use Yii;
 	use yii\widgets\InputWidget;
 	
