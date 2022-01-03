@@ -49,7 +49,7 @@ use YiiMan\YiiLibMeta\lib\MetaLib;
  * @property string  $telegramToken
  * @property string  $telegramBotUsername
  */
-class Options extends Object1
+class Options extends Component
 {
     public $object;
     public $fileName = 'settings.json';
