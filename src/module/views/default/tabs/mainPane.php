@@ -5,7 +5,8 @@
  * @var                       \yii\base\DynamicModel $model
  */
 
-use YiiMan\Setting\module\widgets\ImageField;
+use YiiMan\Setting\models\DynamicModel;
+use YiiMan\Setting\widgets\ImageField;
 
 ?>
 <div class="tab-pane active" id="mainPane">

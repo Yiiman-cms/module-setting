@@ -11,7 +11,7 @@
 
     /**
 	 * Class ToggleWidget
-	 * @package system\widgets\toggle
+	 * @package YiiMan\YiiBasics\widgets\toggle
 	 * @property View $view
 	 */
 	class ToggleWidget extends \kartik\base\InputWidget {

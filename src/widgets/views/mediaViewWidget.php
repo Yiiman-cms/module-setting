@@ -11,7 +11,7 @@
 	 */
 	
 
-	use system\modules\filemanager\assets\LightBoxAssets;
+	use YiiMan\Setting\assets\LightBoxAssets;
 	use yii\bootstrap\Modal;
 	use yii\helpers\BaseHtml;
 	use yii\web\View;

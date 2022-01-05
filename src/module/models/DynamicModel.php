@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by YiiMan TM.
+ * Created by tokapps TM.
  * Programmer: gholamreza beheshtian
  * Mobile:09353466620
  * Company Phone:05138846411
- * Site:https://yiiman.ir
+ * Site:http://tokapps.ir
  * Date: ۰۲/۱۹/۲۰۲۰
  * Time: ۱۲:۰۷ بعدازظهر
  */
@@ -14,7 +14,6 @@ namespace YiiMan\Setting\module\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use YiiMan\LibUploadManager\lib\UploadManager;
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
@@ -23,10 +22,34 @@ class DynamicModel extends \yii\base\DynamicModel
 
     public $formName = '';
     static $tableName = '';
-    public $uploadManager;
+
+    private static $model;
+
+    private static $form;
+
+    public static function setForm($form)
+    {
+        self::$form = $form;
+    }
+
+    public static function getForm()
+    {
+        return self::$form;
+    }
+
+    /**
+     * @return DynamicModel
+     */
+    public static function getInstans()
+    {
+        if (empty(self::$model)) {
+            self::$model = new self(['settings']);
+        }
+        return self::$model;
+    }
+
     public function loadSettings($upload = true)
     {
-        $this->uploadManager = new UploadManager();
         $options = Yii::$app->Options;
         $options->init();
 
@@ -37,7 +60,7 @@ class DynamicModel extends \yii\base\DynamicModel
                     if (!empty($_FILES['DynamicModel']['tmp_name'][$attr])) {
                         $this->defineAttribute($attr);
                         if ($upload) {
-                            $fileName = $this->uploadManager->save($this, $attr);
+                            $fileName = Yii::$app->UploadManager->save($this, $attr);
                             $options->init();
                             $object = $options->object;
                             $object->DynamicModel->{$attr} = ['type' => 'file', 'file' => $fileName];
@@ -63,11 +86,11 @@ class DynamicModel extends \yii\base\DynamicModel
 //                        $upload==false
 //                    ) {
 
-                        $this->defineAttribute($attr);
+                    $this->defineAttribute($attr);
 
-                        if (empty($item['type'])) {
-                            $this->{$attr} = $item;
-                        }
+                    if (empty($item['type'])) {
+                        $this->{$attr} = $item;
+                    }
 //                    }
 
 

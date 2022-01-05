@@ -7,7 +7,8 @@
 	use Yii;
 	use yii\web\Controller;
 	use YiiMan\Setting\lib\UploadedFile;
-	use function file_get_contents;
+    use YiiMan\YiiBasics\lib\Module;
+    use function file_get_contents;
 	
 	
 	/**
@@ -70,7 +71,7 @@
 			
 
 			$this->options->init();
-
+            $this->loadTabsEvents();
 			return $this->render(
 				'index' ,
 				[
@@ -115,4 +116,19 @@
 			}
 			/* </ Write To File > */
 		}
+        private function is_class_a($a, $b)
+        {
+            return $a == $b || is_subclass_of($a, $b);
+        }
+
+        public function loadTabsEvents(){
+            $modules=Yii::$app->modules;
+            foreach ($modules as $module){
+                try{
+                    if (is_array($module) && !empty($module['class']) && $this->is_class_a($module['class'],Module::class)) {
+                        $module['class']::initSetting();
+                    }
+                }catch (\Exception $e){}
+            }
+        }
 	}

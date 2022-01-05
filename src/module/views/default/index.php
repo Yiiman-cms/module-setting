@@ -1,6 +1,7 @@
 <?php
 
-	use YiiMan\Setting\module\trigger\Triggers;
+use YiiMan\Setting\module\models\DynamicModel;
+use YiiMan\Setting\module\trigger\Triggers;
 	use YiiMan\widgetMapInput\GMapInputWidget;
 	use YiiMan\widgetToggle\ToggleWidget;
 	use yii\base\Event;
@@ -21,6 +22,7 @@ JS;
 	
 	
 	$form = ActiveForm::begin( [ 'options' => [ 'enctype' => 'multipart/form-data' ] ] );
+    DynamicModel::setForm($form);
 ?>
 <style>
 	
@@ -72,8 +74,9 @@ JS;
 				<a href="#EmailSettings" data-toggle="tab"><?= Yii::t( 'settings' , 'Mail settings') ?></a>
 			</li>
 			<li>
-				<a href="#sms" data-toggle="tab"><?= Yii::t( 'settings' , 'sms settings') ?></a>
+				<a href="#code" data-toggle="tab"><?= Yii::t( 'settings' , 'Code') ?></a>
 			</li>
+			
 <!--			<li>-->
 <!--				<a href="#Personalize" data-toggle="tab">--><?//= Yii::t( 'settings' , 'Site Personalise') ?><!--</a>-->
 <!--			</li>-->
@@ -106,7 +109,7 @@ JS;
 //			)
             ?>
 			<?= $this->render(
-				'tabs/sms' ,
+				'tabs/code' ,
 				[ 'options' => $options , 'form' => $form , 'model' => $model ]
 			) ?>
 

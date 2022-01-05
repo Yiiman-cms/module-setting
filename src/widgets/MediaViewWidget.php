@@ -41,7 +41,7 @@ CSS;
 
 			$this->view->registerCss($css);
 			echo $this->render(
-				'@YiiMan/src/widgets/views/mediaViewWidget.php' ,
+				'@vendor/yiiman/yii-module-setting/src/widgets/views/mediaViewWidget.php' ,
 				[
 					'model'     => $this->model ,
 					'attribute' => $this->attribute ,
